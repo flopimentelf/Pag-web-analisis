@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dos formas de navegar | Análisis web</title>
+<style>
+:root {
+  --fondo: #f3f0e9;
+  --tinta: #20201e;
+  --gris: #77746e;
+  --linea: #d1ccc2;
+  --rojo: #e33a2c;
+  --verde: #c9f45b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: Arial, Helvetica, sans-serif;
+}
+a { color: inherit; }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 5%;
+  border-bottom: 1px solid var(--linea);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+nav a { text-decoration: none; }
+nav .marca { font-weight: 800; }
+.hero {
+  padding: 9vw 8% 7vw;
+  border-bottom: 1px solid var(--linea);
+}
+.etiqueta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gris);
+}
+h1 {
+  max-width: 1000px;
+  margin: 25px 0;
+  font-size: clamp(50px, 10vw, 135px);
+  line-height: .88;
+  letter-spacing: -.085em;
+  font-weight: 800;
+}
+h1 span { color: var(--rojo); }
+.bajada {
+  max-width: 560px;
+  margin: 35px 0 0 auto;
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.5;
+}
+.indice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 35px;
+}
+.indice a {
+  padding: 10px 15px;
+  border: 1px solid var(--linea);
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.indice a:hover { background: var(--tinta); color: white; }
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding: 75px 8%;
+  border-bottom: 1px solid var(--linea);
+}
+h2 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: .98;
+  letter-spacing: -.06em;
+}
+.intro p, .analisis p, .cierre p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.dos-sitios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.sitio {
+  min-width: 0;
+  padding: 5vw;
+  border-bottom: 1px solid var(--linea);
+}
+.sitio + .sitio { border-left: 1px solid var(--linea); }
+.zara { background: #fffdf9; }
+.apple { background: #e9e8e2; }
+.visual {
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 25px;
+  overflow: hidden;
+}
+.visual-zara {
+  background: #eee9e0;
+  color: #171715;
+  font-family: Georgia, serif;
+  font-size: clamp(45px, 8vw, 100px);
+  letter-spacing: -.09em;
+}
+.visual-apple {
+  flex-direction: column;
+  gap: 18px;
+  background: #1c1c1e;
+  color: white;
+  text-align: center;
+}
+.discos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.disco {
+  width: clamp(60px, 9vw, 100px);
+  aspect-ratio: 1;
+  margin: 0 -7px;
+  border-radius: 50%;
+  border: 5px solid #1c1c1e;
+  background: radial-gradient(circle, #d7d7d7 0 8%, #4a4a4a 9% 18%, #202020 19% 23%, #777 24% 26%, #282828 27%);
+}
+.disco:nth-child(2) { background-color: #e85e50; }
+.disco:nth-child(3) { background-color: #bd9ce9; }
+.apple-word {
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -.06em;
+}
+.num {
+  margin-bottom: 15px;
+  font-size: 12px;
+  color: var(--gris);
+}
+.sitio h2 { margin-bottom: 18px; font-size: clamp(35px, 5vw, 62px); }
+.sitio p { font-size: 15px; line-height: 1.7; }
+.puntos {
+  padding: 20px 0;
+  border-top: 1px solid var(--linea);
+}
+.puntos strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.boton {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 18px;
+  background: var(--tinta);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+.boton:hover { opacity: .75; }
+.analisis {
+  padding: 85px 8%;
+  border-bottom: 1px solid var(--linea);
+}
+.analisis-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 55px;
+}
+.filas { border-top: 1px solid var(--linea); }
+.fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 27px 0;
+  border-bottom: 1px solid var(--linea);
+}
+.fila h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.fila p {
+  margin: 0;
+  font-size: 14px;
+}
+.cierre {
+  padding: 90px 8%;
+  background: var(--verde);
+}
+.cierre h2 {
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+.cierre p { max-width: 720px; }
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 5%;
+  font-size: 11px;
+  color: var(--gris);
+}
+@media (max-width: 700px) {
+  nav { padding: 18px 5%; }
+  .hero { padding: 80px 6% 55px; }
+  .bajada { margin-left: 0; }
+  .intro, .dos-sitios, .analisis-intro, .fila {
+    grid-template-columns: 1fr;
+  }
+  .intro, .analisis { padding: 55px 6%; }
+  .sitio { padding: 30px 6%; }
+  .sitio + .sitio {
+    border-left: 0;
+  }
+  .visual { min-height: 220px; }
+  .fila { gap: 8px; }
+  .fila h3 { margin-bottom: 4px; }
+  .cierre { padding: 65px 6%; }
+  footer { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="marca" href="#inicio">Notas de navegación / 01</a>
+  <span>Diseño digital · Análisis web</span>
+</nav>
+
+<header class="hero" id="inicio">
+  <p class="etiqueta">Observación de dos experiencias digitales</p>
+  <h1>Dos sitios.<br>Dos maneras<br>de <span>conectar.</span></h1>
+  <p class="bajada">
+    Una web nos invita a mirar y elegir qué vestir.
+    La otra nos lleva a descubrir qué escuchar.
+    Ambas trabajan con contenido, pero no buscan lo mismo.
+  </p>
+  <div class="indice">
+    <a href="#zara">01 / Zara</a>
+    <a href="#apple">02 / Apple Music</a>
+    <a href="#comparacion">03 / Comparación</a>
+    <a href="#conclusion">04 / Conclusión</a>
+  </div>
+</header>
+
+<section class="intro">
+  <p class="etiqueta">Punto de partida</p>
+  <div>
+    <h2>¿Cómo nos guía una página sin que lo notemos?</h2>
+    <p>
+      Al entrar a un sitio, empezamos a tomar decisiones casi de inmediato:
+      dónde mirar, qué leer, qué abrir y qué ignorar. La composición,
+      las imágenes, el orden del contenido y los accesos influyen en ese
+      recorrido. Para observarlo, elegí dos plataformas que usamos para
+      cosas distintas: Zara y Apple Music.
+    </p>
+  </div>
+</section>
+
+<main class="dos-sitios">
+
+  <article class="sitio zara" id="zara">
+    <div class="visual visual-zara">ZARA</div>
+    <p class="num">01 / MODA Y COMERCIO DIGITAL</p>
+    <h2>Comprar también es mirar.</h2>
+    <p>
+      <strong>Visitar sitio:</strong>
+      <a href="https://www.zara.com/cl/" target="_blank" rel="noopener noreferrer">zara.com/cl</a>
+    </p>
+    <p>
+      La página de Zara funciona como una vitrina que se renueva.
+      Las fotografías tienen mucho peso y la ropa suele ser la protagonista.
+      El texto acompaña, pero son las imágenes las que llaman primero
+      la atención y generan interés por las colecciones.
+    </p>
+    <div class="puntos">
+      <strong>Organización</strong>
+      <p>
+        La navegación se divide por categorías como mujer, hombre, niños,
+        novedades y otros productos. Esto permite entrar directamente
+        a una zona de interés sin recorrer todo el catálogo.
+      </p>
+    </div>
+    <div class="puntos">
+      <strong>Lenguaje visual</strong>
+      <p>
+        Predomina una estética editorial: imágenes grandes, fondos
+        relativamente sobrios y tipografía sencilla. La ropa destaca
+        porque la interfaz intenta no competir demasiado con ella.
+      </p>
+    </div>
+    <div class="puntos">
+      <strong>Experiencia de uso</strong>
+      <p>
+        El recorrido lleva desde la exploración de una colección hasta
+        la selección de un producto y su compra. Las categorías ayudan,
+        aunque la cantidad de opciones puede hacer que navegar se sienta
+        un poco extenso.
+      </p>
+    </div>
+    <a class="boton" href="https://www.zara.com/cl/" target="_blank" rel="noopener noreferrer">
+      Explorar Zara
+    </a>
+  </article>
+
+  <article class="sitio apple" id="apple">
+    <div class="visual visual-apple">
+      <div class="discos">
+        <span class="disco"></span>
+        <span class="disco"></span>
+        <span class="disco"></span>
+      </div>
+      <div class="apple-word">Apple Music</div>
+    </div>
+    <p class="num">02 / MÚSICA Y DESCUBRIMIENTO</p>
+    <h2>Escuchar es explorar.</h2>
+    <p>
+      <strong>Visitar sitio:</strong>
+      <a href="https://music.apple.com/cl/" target="_blank" rel="noopener noreferrer">music.apple.com/cl</a>
+    </p>
+    <p>
+      Apple Music organiza la experiencia alrededor de la música:
+      encontrar canciones, descubrir artistas, explorar géneros y acceder
+      a estaciones de radio. En vez de mostrar un catálogo de objetos,
+      propone distintas entradas para llegar a algo que queramos escuchar.
+    </p>
+    <div class="puntos">
+      <strong>Organización</strong>
+      <p>
+        Las secciones de inicio, novedades, búsqueda y radio permiten
+        acercarse al contenido desde distintos intereses. Buscar sirve
+        para llegar a algo conocido; explorar permite encontrar algo nuevo.
+      </p>
+    </div>
+    <div class="puntos">
+      <strong>Lenguaje visual</strong>
+      <p>
+        Las portadas, los colores de cada lanzamiento y las imágenes
+        de artistas aportan variedad. La interfaz mantiene una estructura
+        reconocible mientras el contenido cambia.
+      </p>
+    </div>
+    <div class="puntos">
+      <strong>Experiencia de uso</strong>
+      <p>
+        La navegación combina búsqueda directa con recomendaciones
+        y descubrimiento. La experiencia está pensada para pasar de
+        encontrar una canción a continuar escuchando contenido relacionado.
+      </p>
+    </div>
+    <a class="boton" href="https://music.apple.com/cl/" target="_blank" rel="noopener noreferrer">
+      Explorar Apple Music
+    </a>
+  </article>
+
+</main>
+
+<section class="analisis" id="comparacion">
+  <div class="analisis-intro">
+    <div>
+      <p class="etiqueta">03 / Lectura comparativa</p>
+      <h2>Se parecen en la forma, no en el objetivo.</h2>
+    </div>
+    <p>
+      Las dos páginas necesitan ordenar una gran cantidad de contenido
+      y mantener al usuario interesado. La diferencia está en lo que
+      esperan que hagamos después: Zara nos acerca a elegir un producto;
+      Apple Music nos invita a encontrar y reproducir música.
+    </p>
+  </div>
+
+  <div class="filas">
+    <div class="fila">
+      <h3>Primera impresión</h3>
+      <p><strong>Zara</strong><br>La fotografía y la presentación de las colecciones construyen el primer impacto.</p>
+      <p><strong>Apple Music</strong><br>Las portadas, artistas y recomendaciones anticipan una experiencia centrada en escuchar.</p>
+    </div>
+    <div class="fila">
+      <h3>Cómo se recorre</h3>
+      <p><strong>Zara</strong><br>Se avanza por categorías, productos, filtros y opciones de compra.</p>
+      <p><strong>Apple Music</strong><br>Se puede buscar algo concreto o dejarse llevar por géneros, novedades y recomendaciones.</p>
+    </div>
+    <div class="fila">
+      <h3>Qué mantiene el interés</h3>
+      <p><strong>Zara</strong><br>La renovación de colecciones y la presentación visual de los productos.</p>
+      <p><strong>Apple Music</strong><br>La variedad musical, los nuevos lanzamientos y el descubrimiento de contenido.</p>
+    </div>
+    <div class="fila">
+      <h3>Posible dificultad</h3>
+      <p><strong>Zara</strong><br>La cantidad de categorías y opciones puede volver más largo el recorrido.</p>
+      <p><strong>Apple Music</strong><br>La cantidad de contenido puede dificultar la elección si todavía no sabemos qué queremos escuchar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cierre" id="conclusion">
+  <p class="etiqueta">04 / Conclusión personal</p>
+  <h2>Diseñar también es decidir qué aparece primero.</h2>
+  <p>
+    Al comparar ambos sitios, me parece interesante que ninguno depende
+    solamente de tener muchas opciones. También necesitan darles un orden.
+    Zara utiliza la imagen para despertar interés y conducir hacia un
+    producto; Apple Music organiza la música para que podamos encontrar
+    algo conocido o descubrir algo distinto.
+  </p>
+  <p>
+    En los dos casos, la experiencia mejora cuando entendemos dónde estamos
+    y qué podemos hacer después. Para mí, ahí está una parte importante
+    del diseño de interfaces: no se trata solo de que una página se vea
+    bien, sino de que su estructura tenga sentido para quien la usa.
+  </p>
+</section>
+
+<footer>
+  <span>ANÁLISIS DE EXPERIENCIAS WEB</span>
+  <span>Referencias: Zara Chile · Apple Music Chile</span>
+</footer>
+
+</body>
+</html>
