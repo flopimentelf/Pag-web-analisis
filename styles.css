@@ -1,0 +1,41 @@
+.mejoras {
+  padding: 60px 0;
+  border-top: 1px solid #222;
+}
+
+.mejoras h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 35px;
+}
+
+.mejoras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.mejora {
+  padding: 25px;
+  border: 1px solid #222;
+}
+
+.numero {
+  font-size: 0.85rem;
+  color: #e53935;
+  font-weight: bold;
+}
+
+.mejora h3 {
+  font-size: 1.8rem;
+  margin: 18px 0;
+}
+
+.mejora p {
+  line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+  .mejoras-grid {
+    grid-template-columns: 1fr;
+  }
+}
