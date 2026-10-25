@@ -200,6 +200,44 @@ h2 {
   margin: 0;
   font-size: 14px;
 }
+.mejoras {
+  padding: 85px 8%;
+  border-bottom: 1px solid var(--linea);
+}
+.mejoras > h2 {
+  max-width: 900px;
+  margin-bottom: 45px;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: .98;
+  letter-spacing: -.06em;
+}
+.mejoras-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+.mejora {
+  min-width: 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--linea);
+}
+.numero {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--gris);
+  letter-spacing: 1px;
+}
+.mejora h3 {
+  margin: 0 0 18px;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+}
+.mejora p {
+  font-size: 15px;
+  line-height: 1.75;
+}
 .cierre {
   padding: 90px 8%;
   background: var(--verde);
@@ -224,7 +262,7 @@ footer {
   .intro, .dos-sitios, .analisis-intro, .fila {
     grid-template-columns: 1fr;
   }
-  .intro, .analisis { padding: 55px 6%; }
+  .intro, .analisis, .mejoras { padding: 55px 6%; }
   .sitio { padding: 30px 6%; }
   .sitio + .sitio {
     border-left: 0;
@@ -388,27 +426,86 @@ footer {
 
   <div class="filas">
     <div class="fila">
-      <h3>Primera impresión</h3>
-      <p><strong>Zara</strong><br>La fotografía y la presentación de las colecciones construyen el primer impacto.</p>
-      <p><strong>Apple Music</strong><br>Las portadas, artistas y recomendaciones anticipan una experiencia centrada en escuchar.</p>
+      <h3>¿Qué partes de la pantalla se mueven y cuáles quedan fijas al hacer scroll?</h3>
+      <p>
+        <strong>Zara</strong><br>
+        El contenido principal, como las imágenes de las colecciones y los
+        productos, se desplaza verticalmente. La navegación y los controles
+        pueden cambiar su posición o permanecer visibles según la sección
+        y el tamaño de la pantalla. Conviene comprobarlo directamente en la
+        página durante el desplazamiento.
+      </p>
+      <p>
+        <strong>Apple Music</strong><br>
+        Las listas, portadas y recomendaciones se desplazan dentro de la
+        página. Algunos controles de navegación o reproducción pueden
+        mantenerse visibles, dependiendo de la vista utilizada. Es necesario
+        verificar cuáles permanecen fijos en la versión que se esté analizando.
+      </p>
     </div>
+
     <div class="fila">
-      <h3>Cómo se recorre</h3>
-      <p><strong>Zara</strong><br>Se avanza por categorías, productos, filtros y opciones de compra.</p>
-      <p><strong>Apple Music</strong><br>Se puede buscar algo concreto o dejarse llevar por géneros, novedades y recomendaciones.</p>
+      <h3>¿Cómo se distribuyen las columnas, usando las herramientas de desarrollador del navegador?</h3>
+      <p>
+        <strong>Zara</strong><br>
+        En las páginas de catálogo, los productos suelen mostrarse en una
+        cuadrícula con varias columnas. Las herramientas de desarrollador
+        permiten inspeccionar el contenedor y revisar las reglas CSS para
+        identificar si la distribución se construye con Grid, Flexbox u otros
+        recursos. La cantidad de columnas puede variar según la página.
+      </p>
+      <p>
+        <strong>Apple Music</strong><br>
+        Las portadas y otros contenidos aparecen en filas, bloques o carruseles.
+        Al inspeccionar los elementos en las herramientas de desarrollador se
+        pueden revisar sus contenedores y las propiedades CSS responsables de
+        la distribución. La estructura puede cambiar entre la web y distintas
+        vistas de la plataforma.
+      </p>
     </div>
+
     <div class="fila">
-      <h3>Qué mantiene el interés</h3>
-      <p><strong>Zara</strong><br>La renovación de colecciones y la presentación visual de los productos.</p>
-      <p><strong>Apple Music</strong><br>La variedad musical, los nuevos lanzamientos y el descubrimiento de contenido.</p>
+      <h3>¿Cómo reacciona ese layout cuando la pantalla se reduce al tamaño móvil?</h3>
+      <p>
+        <strong>Zara</strong><br>
+        La interfaz adapta la distribución de los productos a un espacio más
+        estrecho, normalmente mostrando menos columnas y ajustando imágenes,
+        textos y controles. La navegación también puede reorganizarse para
+        facilitar el uso desde una pantalla táctil. Conviene comparar la misma
+        página en escritorio y móvil para observar los cambios concretos.
+      </p>
+      <p>
+        <strong>Apple Music</strong><br>
+        Los contenidos se ajustan al ancho disponible y suele haber menos
+        elementos visibles simultáneamente. Las portadas, listas y controles
+        se organizan para una interacción táctil, manteniendo la jerarquía de
+        la información. La distribución exacta debe comprobarse en la versión
+        móvil del sitio.
+      </p>
     </div>
+
     <div class="fila">
-      <h3>Posible dificultad</h3>
-      <p><strong>Zara</strong><br>La cantidad de categorías y opciones puede volver más largo el recorrido.</p>
-      <p><strong>Apple Music</strong><br>La cantidad de contenido puede dificultar la elección si todavía no sabemos qué queremos escuchar.</p>
+      <h3>¿Les parecen apropiadas las decisiones tomadas? ¿Harían algún ajuste?</h3>
+      <p>
+        <strong>Zara</strong><br>
+        La presentación visual y las imágenes grandes ayudan a destacar las
+        prendas y construir una identidad editorial. Como ajuste, probaría
+        una jerarquía más clara para los filtros y las categorías, además de
+        facilitar la comparación entre productos y el descubrimiento de
+        combinaciones nuevas sin interrumpir el recorrido de compra.
+      </p>
+      <p>
+        <strong>Apple Music</strong><br>
+        La organización visual permite explorar música y reconocer portadas
+        y artistas. Mejoraría la visibilidad de algunos accesos y propondría
+        recorridos que conecten canciones conocidas con nuevos géneros y
+        artistas, para facilitar el descubrimiento sin que el usuario pierda
+        la orientación ni el control de su recorrido.
+      </p>
     </div>
   </div>
 </section>
+
 <section class="mejoras">
   <h2>Aspectos a mejorar</h2>
   <div class="mejoras-grid">
@@ -433,6 +530,7 @@ footer {
         donde probar nuevas alternativas se sienta accesible y natural.
       </p>
     </article>
+
     <article class="mejora">
       <span class="numero">02 / APPLE MUSIC</span>
       <h3>Diseñar el paso de lo conocido a lo desconocido</h3>
@@ -456,6 +554,7 @@ footer {
     </article>
   </div>
 </section>
+
 <section class="cierre" id="conclusion">
   <p class="etiqueta">04 / Conclusión personal</p>
   <h2>Diseñar también es decidir qué aparece primero.</h2>
